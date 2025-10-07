@@ -12,7 +12,11 @@ Projektet innehåller följande filer:
 
 ## Förklaring av programmet
 
-- Programmet läser in data från **`data.csv`**.  
-- En linjär klassificeringsmodell tränas .  
-- Resultatet sparas i **`labelled_data.csv`**.  
+1. Läser in punkterna från CSV-filen.
+2. Plottar punkterna i en scatterplot.
+3. Beräknar en linje som delar punkterna så jämnt som möjligt (med hjälp av medelvärden för x och y).
+4. Använder en funktion `point_position()` för att bestämma om varje punkt ligger **ovanför/under** (eller vänster/höger) om linjen.
+5. Sparar resultatet i en ny fil `labelled_data.csv` med en extra kolumn `label`:
+   - `0` = punkten ligger under/vänster om linjen  
+   - `1` = punkten ligger ovanför/höger om linjen  
 
