@@ -5,9 +5,8 @@ Syftet är att träna en enkel klassificeringsmodell på given data och spara re
 
 ## Innehåll
 Projektet innehåller följande filer:
-- `main.py` – Python-koden som tränar modellen och gör klassificeringen.
-- `labelled_data.csv` – Datafil med klassificerade observationer.
-- `README.md` – Denna fil, med instruktioner och beskrivning.
+- `main.py` – Python-programmet som läser in datapunkter, ritar en linje och klassificerar varje punkt som ovanför eller under linjen.
+- `labelled_data.csv` – Datafil som skapats av programmet, innehåller samma punkter men med en extra kolumn för etikett (0 = under linjen, 1 = ovanför linjen).
 - `report.ipynb` – En Jupyter Notebook med förklaringar och visualiseringar.
 
 ## Förklaring av programmet
