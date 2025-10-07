@@ -34,3 +34,28 @@ with open("labelled_data.csv", "w", newline="") as f:
         label = point_position(p[0], p[1], ln.k, ln.m)
         writer.writerow([p[0], p[1], label])
 print("Filen 'labelled_data.csv' har skapats med etiketter (0/1)")
+
+# f) Ett fönster med en graf där punkterna, deras klass och din linje 
+x_values, y_values, labels = [] , [], []
+with open( "labelled_data.csv", "r", newline="") as lb_data:
+   reader= csv.reader(lb_data)
+   next(reader) # hoppa över header
+   for line in reader:
+        x_values.append(float(line[0]))
+        y_values.append(float(line[1]))
+        labels.append(int(line[2]))
+x_values= np.array(x_values)
+y_values= np.array(y_values)
+labels= np.array(labels)        
+upper_indx= np.where(labels==1) # hämta indecies för alla höger punkter
+lower_indx= np.where(labels==0) # hämta indecies för all vänster punkter
+plt.figure( figsize=(7,5))
+plt.scatter(x_values[upper_indx], y_values[upper_indx], label="Data points above line" , color="red" , marker="*")
+plt.scatter(x_values[lower_indx], y_values[lower_indx], label="Data points lower line" , color="green" , marker="*")
+plt.plot(ln.x_line, ln.y_line, label="Y=kx+m" ,color= "blue")
+plt.title("Scatter plot of labelled data with line")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.legend()
+plt.grid(True)
+plt.show()
