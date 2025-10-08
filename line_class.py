@@ -5,6 +5,7 @@ import csv
 
 # a)  ====läsa in filen unlabelled_data.csv och plotta innehållet====
 path= "unlabelled_data.csv"
+
 def get_data(path):
     d1, d2 = [] , []
     try:
@@ -19,6 +20,7 @@ def get_data(path):
     return d1, d2
 
 d1,d2 = get_data(path) # anropa funktion
+
 # ====plotta data punkter====
 plt.figure(figsize=(7,5))
 plt.scatter(d1, d2, label="Data points" , color="red" , marker="*")
@@ -31,6 +33,7 @@ plt.show()
 # convert till numpy-array
 x= np.array(d1)
 y=np.array(d2)
+
 """Beräkna linjen som delar punkterna
  så jämnt som möjligt"""
 # Beräknar medelvärdet av x och y för att hitta en punkt nära datats centrala punkt
@@ -44,7 +47,7 @@ x_line = np.linspace(min(x), max(x), 100)
 y_line = -1*x_line+ m
 print(f"Ekvation: y={k}x+{m:.2f}")
 plt.figure( figsize=(7,5))
-plt.scatter(d1, d2, label="Data points" , c="red" , marker="*")
+plt.scatter(x, y, label="Data points" , c="red" , marker="*")
 plt.plot(x_line, y_line, label="Y=kx+m" ,color= "blue")
 plt.title("Scatter plot of data med linje")
 plt.xlabel("x")

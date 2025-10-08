@@ -1,13 +1,16 @@
 # Linjär klassificering - Laboration
 
 Detta projekt är en laboration i linjär klassificering.  
-Syftet är att träna en enkel klassificeringsmodell på given data och spara resultaten i en CSV-fil.
+Syftet är att klacificera datapunkter utifrån deras position i förhållande till en linje och spara resultaten i en CSV-fil.
 
 ## Innehåll
+
 Projektet innehåller följande filer:
-- `main.py` – Python-programmet som läser in datapunkter, ritar en linje och klassificerar varje punkt som ovanför eller under linjen.
+
+- `line_class.py` - Läser in datapunkterna från`unlabelled_data.csv`, visar dem i ett diagram och beräknar en linje som delar punkterna så jämnt som möjligt
+- `main.py` – Implementerar en funktion för att klassificera punkterna i förhållande till linjen (ovan/under) och skapar en ny fil med resultaten..
 - `labelled_data.csv` – Datafil som skapats av programmet, innehåller samma punkter men med en extra kolumn för etikett (0 = under linjen, 1 = ovanför linjen).
-- `report.ipynb` – En Jupyter Notebook med förklaringar och visualiseringar.
+- `report.ipynb` –En Jupyter Notebook med förklaringar, resonemang och visualiseringar.
 
 ## Förklaring av programmet
 
