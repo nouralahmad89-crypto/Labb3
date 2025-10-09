@@ -24,7 +24,7 @@ d1,d2 = get_data(path) # anropa funktion
 # ====plotta data punkter====
 def draw_point(x,y):
     plt.figure(figsize=(7,5))
-    plt.scatter(d1, d2, label="Data points" , color="red" , marker="*")
+    plt.scatter(x, y, label="Data points" , color="red" , marker="*")
     plt.title("Scatter plot of data")
     plt.xlabel("x")
     plt.ylabel("y")
