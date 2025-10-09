@@ -7,8 +7,8 @@ Syftet är att klacificera datapunkter utifrån deras position i förhållande t
 
 Projektet innehåller följande filer:
 
-- `line_class.py` - Läser in datapunkterna från`unlabelled_data.csv`, visar dem i ett diagram och beräknar en linje som delar punkterna så jämnt som möjligt
-- `main.py` – Implementerar en funktion för att klassificera punkterna i förhållande till linjen (ovan/under) och skapar en ny fil med resultaten..
+- `line_class.py` - Läser in datapunkterna från`unlabelled_data.csv`, visar dem i ett diagram.
+- `main.py` – Beräknar en linje som delar punkterna så jämnt som möjligt och implementerar en funktion som  klassificerar punkterna i förhållande till linjen (ovan/under) och skapar en ny fil med resultaten.
 - `labelled_data.csv` – Datafil som skapats av programmet, innehåller samma punkter men med en extra kolumn för etikett (0 = under linjen, 1 = ovanför linjen).
 - `report.ipynb` –En Jupyter Notebook med förklaringar, resonemang och visualiseringar.
 
