@@ -1,4 +1,3 @@
-# main.py
 import numpy as np
 import matplotlib.pyplot as plt
 import csv
@@ -34,17 +33,19 @@ def draw_line_p(xl, yl, k_värde, m_värde, xp, yp):
     plt.legend()
     plt.grid(True)
     plt.show()
+draw_line_p(x_line, y_line, k, m, x, y)    
 
 def point_position(x_point, y_point, k, m):
     """Returnerar: 0 om punkten ligger under/eller vänster om linjen
     1 om punkten ligger ovanför/eller höger om linjen"""
-    if y_point > k*x_point + m:
+    if y_point > k * x_point + m:
        return 1
     else:
        return 0
 
 def classify_points_and_get_labels():
-    """Returnerar x_values, y_values och labels för dataset"""
+    """ Returnerar x_values, y_values 
+       och labels för dataset  """
     points = list(zip(d1, d2))
     labels = np.array([point_position(p[0], p[1], k, m) for p in points])
     x_values = np.array([p[0] for p in points])
@@ -73,7 +74,6 @@ def draw_classified(xl, yl, k_värde, m_värde, xp, yp, my_label):
 # ===== Körbar kod när scriptet körs direkt =====
 if __name__ == "__main__":
     x_values, y_values, labels = classify_points_and_get_labels()
-
     # Skriv labelled_data.csv
     with open("labelled_data.csv", "w", newline="") as f:
         writer = csv.writer(f)

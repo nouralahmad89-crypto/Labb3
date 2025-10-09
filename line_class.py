@@ -31,5 +31,6 @@ def draw_point(x,y):
     plt.legend()
     plt.grid(True)
     plt.show()
-draw_point(d1 , d2)    
+if __name__ == "__main__":    
+    draw_point(d1 , d2)    # plotta data punkter unta linje bara i line_class
 
